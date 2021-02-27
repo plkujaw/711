@@ -1,0 +1,33 @@
+{
+  "name": "711",
+  "version": "0.1.0",
+  "description": "711 5th Avenue Wordpress Theme",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plkujaw/711.git"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "new",
+    "york",
+    "5th",
+    "avenue"
+  ],
+  "author": "Kuba Jawor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plkujaw/711/issues"
+  },
+  "homepage": "https://github.com/plkujaw/711#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "gulp-sass": "^4.1.0"
+  }
+}

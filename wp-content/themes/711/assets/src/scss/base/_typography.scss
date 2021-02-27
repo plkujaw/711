@@ -1,0 +1,11 @@
+body {
+  text-rendering: optimizeLegibility; // aestheticallyloyal.com/public/optimize-legibility/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-wrap: break-word;
+  -webkit-text-size-adjust: 100%; // Prevents iOS orientation font resize bug
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
