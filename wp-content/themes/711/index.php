@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.typekit.net/fzt2ywp.css">
-    <title>Document</title>
     <?php wp_head(); ?>
+    <title><?php echo bloginfo('name'); ?></title>
   </head>
   <body>
     <div id="page" class="site">
@@ -15,14 +15,11 @@
 
       <section class="hero">
         <div class="hero__title">
-          <p>RISE ABOVE THE REST</p>
+          <p><?php the_field('hero_title') ?></p>
         </div>
         <figure class="hero__smoke hero__smoke--1">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/smoke-1-l.png" alt="">
         </figure>
-        <!-- <figure class="hero__smoke hero__smoke--2">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/smoke-1-r.png" alt="">
-        </figure> -->
       </section>
 
       <div class="content">
@@ -30,36 +27,37 @@
         <div class="intro__gradient">
         </div>
         <section class="intro">
-          <div class="intro__images">
-            <div class="intro__image intro__image--1">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro-1.jpg" alt="">
+
+          <?php if(have_rows('intro_image')): ?>
+                        <div class="intro__images">
+              <?php while(have_rows('intro_image')): the_row(); ?>
+
+                <?php $intro_image = get_sub_field('image'); ?>
+                <div class="intro__image">
+                  <img src="<?php echo $intro_image['url'] ?>" alt="<?php echo $intro_image['alt'] ?>">
+                </div>
+
+    
+              <?php endwhile; ?>   
             </div>
-            <div class="intro__image intro__image--2">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro-2.jpg" alt="">
-            </div>
-          </div>
+          <?php endif; ?>
+
         </section>
 
         <section class="the-building" id="building">
           <article class="the-building__title">
-            <h1>An attraction that stands the test of time</h1>
+            <h1><?php the_field('building_section_title') ?></h1>
           </article>
           <article class="the-building__copy">
-            <p>
-              Within an increasingly complex market, Fifth Avenue remains a magnetic attraction. New York born and bred department stores established 100 years ago such as Bergdorf Goodman and Saks Fifth Avenue are a testament to the location’s enduring success.
-            </p>
-
-            <p>
-              Surrounded by Manhattan’s most valuable office space and prestigious residences, the dense population secures this legacy of success for centuries to come.
-            </p>
+            <p><?php the_field('building_section_copy') ?></p>
           </article>
 
           <div class="the-building__images">
             <figure class="the-building__image the-building__image--1">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/flat-iron.png" alt="">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/flat-iron.png" alt="Flat Iron Building">
             </figure>
             <figure class="the-building__image the-building__image--2">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clock.png" alt="">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clock.png" alt="Fifth Avenue Clock">
             </figure>
           </div>
 
@@ -71,11 +69,11 @@
           <div class="location__copy">
 
             <div class="location__copy__intro">
-              <h3>The avenue of opportunity with over a century of world-leading retail</h3>
+              <h3><?php the_field('location_intro') ?></h3>
             </div>
 
             <div class="location__copy__description">
-              <p>Fifth Avenue, Manhattan. An unrivalled shopping address. Lined with luxury brands, high street heroes and pioneering tech brands, this vibrant, bustling area continues to prosper from visitor spending power, showing no signs of slowing down.</p>
+              <p><?php the_field('location_description') ?></p>
             </div>
           </div>
 
@@ -94,50 +92,46 @@
       
         <section class="contact" id="contact">
           <article class="contact__title">
-            <h1>Unlock a legacy of success</h1>
+            <h1><?php the_field('contact_section_title') ?></h1>
           </article>
 
-          <article class="contact__office__location">
-            <p>LONDON</p>
+          <?php if(have_rows('contact_office')): ?>
+            <?php while(have_rows('contact_office')): the_row(); ?>
+          
+              <article class="contact__office__location">
 
-            <div class="contact__office__location__details">
-              <div class="contact__office__details">
-                <ul>
-                  <li>Sam Foyle</li>
-                  <li><a href="mailto: SFoyle@savills.com" class="mail">SFoyle@savills.com</a></li>
-                  <li><a href="tel: +44 (0)7764348689">+44 (0)7764348689</a></li>
-                </ul>
-              </div>
-              <div class="contact__office__details">
-                <ul>
-                  <li>Sam Foyle</li>
-                  <li><a href="mailto: SFoyle@savills.com" class="mail">SFoyle@savills.com</a></li>
-                  <li><a href="tel: +44 (0)7764348689">+44 (0)7764348689</a></li>
-                </ul>
-              </div>
-              <div class="contact__office__details">
-                <ul>
-                  <li> Anthony Selwyn</li>
-                  <li><a href="mailto: ASelwyn@savills.com" class="mail">ASelwyn@savills.com</a></li>
-                  <li><a href="tel: +44 (0)7917657747">+44 (0)7917657747</a></li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="contact__office__location">
-            <p>NEW YORK</p>
-            <div class="contact__office__location__details">
-              <div class="contact__office__details">
-                <ul>
-                  <li>Gene Spiegelman</li>
-                  <li><a href="mailto: gspiegelman@ripcony.com" class="mail">gspiegelman@ripcony.com</a></li>
-                  <li><a href="tel: +1 212.219.7045">+1 212.219.7045</a></li>
-                </ul>
-              </div>
-            </div>
-          </article>
+                <p><?php the_sub_field('office_location'); ?></p>
+                <div class="contact__office__location__details">
+                  <?php if(have_rows('contact_details')): ?>
+                    <?php while(have_rows('contact_details')): the_row(); ?>                
+                      <div class="contact__office__details">
+                      <ul>
+                        <li><?php the_sub_field('name'); ?></li>
+                        <li>
+                          <?php  
+                          $link = get_sub_field('email');
+                          if($link) :
+                            $link_url = $link['url'];
+                            $link_title = $link['title'];
+                          ?> 
+                            <a href="mailto: <?php echo esc_url($link_url); ?>" class="mail">
+                              <?php echo esc_html($link_title); ?>
+                            </a>
+                          <?php endif; ?>
+                        </li>
+                        <li>
+                          <a href="tel: <?php the_sub_field('telephone'); ?>"><?php the_sub_field('telephone'); ?>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <?php endwhile; ?>
+                  <?php endif; ?>
+                </div>
+              </article>
+            <?php endwhile; ?>
+          <?php endif; ?>
         </section>
       </div>
-      
+
     <?php get_template_part('includes/footer') ?>

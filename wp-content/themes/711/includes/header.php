@@ -2,19 +2,18 @@
   <div class="header__row">
     <div class="header__logo">
       <div class="header__logo__logomark">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="">
+        <a href="<?php site_url() ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="Logo"></a>
       </div>
       <div class="header__logo__logotype">
-        <p>711 Fifth Avenue</p>
+        <p><a href="<?php site_url() ?>">711 Fifth Avenue</a></p>
       </div>
     </div>
     <nav class="header__nav">
-      <ul class="header__nav__list">
-        <li><a href="#location">LOCATION</a></li>
-        <li><a href="#building">THE BUILDING</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-        <li class="nav__back-to-top"><a href="#">BACK TO THE TOP</a></li>
-      </ul>
+        <?php  wp_nav_menu( array(
+        'theme_location' => 'header-nav',
+        'menu_class' => 'header__nav__list',
+      ) )?>
+        <span class="nav__back-to-top"><a href="#">BACK TO THE TOP</a></span>
     </nav>
   </div>
 </header>

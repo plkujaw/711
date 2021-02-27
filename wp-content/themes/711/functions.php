@@ -9,3 +9,10 @@ function enqueue_styles_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_styles_scripts' );
+
+
+add_theme_support( 'menus');
+register_nav_menus( array (
+  'header-nav' => 'Header Navigation',
+  )
+);

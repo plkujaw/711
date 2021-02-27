@@ -508,7 +508,8 @@ h3 {
 .footer {
   flex: 0 1 auto;
   position: relative;
-  width: 100%; }
+  width: 100%;
+  padding-block: 2rem; }
   .footer__copy {
     text-align: center;
     font-size: 14px; }
@@ -531,7 +532,7 @@ h3 {
       opacity: 0; }
     .header--sticky .header__logo__logotype {
       opacity: 1; }
-    .header--sticky .header__nav .header__nav__list .nav__back-to-top {
+    .header--sticky .header__nav .nav__back-to-top {
       display: block; }
 
 .header__row {
@@ -558,7 +559,8 @@ h3 {
 
 .header__nav {
   margin-left: auto;
-  letter-spacing: 0.8px; }
+  letter-spacing: 0.8px;
+  display: flex; }
   .header__nav__list {
     display: flex;
     justify-content: flex-end;
@@ -573,7 +575,11 @@ h3 {
       .header__nav__list li:last-of-type {
         margin-right: 0; }
   .header__nav .nav__back-to-top {
-    display: none; }
+    display: none;
+    position: relative;
+    bottom: 1px;
+    margin-left: 1rem;
+    font-weight: bold; }
     .header__nav .nav__back-to-top:after {
       display: inline-block;
       position: relative;
@@ -645,15 +651,15 @@ h3 {
     .intro__image img {
       width: 100%;
       height: auto; }
-    .intro__image--1 {
+    .intro__image:first-of-type {
       padding: 2rem 1rem 0 3rem; }
       @media screen and (min-width: 48.0625em) {
-        .intro__image--1 {
+        .intro__image:first-of-type {
           padding: 4rem 1rem 0 3rem; } }
-    .intro__image--2 {
+    .intro__image:last-of-type {
       padding: 2rem 2rem 0 1rem; }
       @media screen and (min-width: 48.0625em) {
-        .intro__image--2 {
+        .intro__image:last-of-type {
           padding: 8rem 1rem 0 3rem; } }
 
 .the-building {
