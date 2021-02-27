@@ -477,9 +477,32 @@ body {
   word-wrap: break-word;
   -webkit-text-size-adjust: 100%; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Butler Stencil", serif;
   font-weight: bold; }
+
+h1 {
+  font-size: 3rem; }
+  @media screen and (min-width: 64.0625em) {
+    h1 {
+      font-size: 6rem; } }
+
+h2 {
+  font-size: 2.5rem; }
+  @media screen and (min-width: 64.0625em) {
+    h2 {
+      font-size: 5rem; } }
+
+h3 {
+  font-size: 2rem; }
+  @media screen and (min-width: 64.0625em) {
+    h3 {
+      font-size: 4.5rem; } }
 
 .footer {
   flex: 0 1 auto;
@@ -598,3 +621,75 @@ h1, h2, h3, h4, h5, h6 {
       @media screen and (min-width: 48.0625em) {
         .intro__image--2 {
           padding: 8rem 1rem 0 3rem; } }
+
+.the-building {
+  position: relative;
+  text-align: center;
+  padding-inline: 2rem;
+  padding-block: 4rem;
+  overflow: hidden; }
+  .the-building__title {
+    width: 100%;
+    margin-inline: auto; }
+    .the-building__title h1 {
+      padding-inline: 3rem;
+      padding-block: 4rem; }
+    @media screen and (min-width: 48.0625em) {
+      .the-building__title {
+        width: 75%; }
+        .the-building__title h1 {
+          padding-inline: 6rem; } }
+  .the-building__copy * {
+    position: relative;
+    width: 100%;
+    padding-inline: 2rem;
+    padding-block-end: 2rem;
+    line-height: 1.5; }
+    @media screen and (min-width: 48.0625em) {
+      .the-building__copy * {
+        width: 50%;
+        margin-inline: auto; } }
+    .the-building__copy *:first-child:before {
+      position: absolute;
+      top: -65px;
+      left: 0;
+      font-family: "Butler Stencil", serif;
+      font-size: 120px;
+      opacity: 10%;
+      content: 'W'; }
+  .the-building__images {
+    width: 100%; }
+    .the-building__images .the-building__image {
+      display: none;
+      position: absolute;
+      top: 0;
+      z-index: -1; }
+      @media screen and (min-width: 48.0625em) {
+        .the-building__images .the-building__image {
+          display: block; } }
+      .the-building__images .the-building__image--1 {
+        height: 500px;
+        left: 0; }
+        @media screen and (min-width: 48.0625em) {
+          .the-building__images .the-building__image--1 {
+            height: 750px; } }
+        @media screen and (min-width: 64.0625em) {
+          .the-building__images .the-building__image--1 {
+            height: 1000px; } }
+        .the-building__images .the-building__image--1 img {
+          width: auto;
+          height: 100%; }
+      .the-building__images .the-building__image--2 {
+        height: 350px;
+        right: -10px; }
+        @media screen and (min-width: 48.0625em) {
+          .the-building__images .the-building__image--2 {
+            height: 550px;
+            right: -30px; } }
+        @media screen and (min-width: 64.0625em) {
+          .the-building__images .the-building__image--2 {
+            height: 750px;
+            right: -45px; } }
+        .the-building__images .the-building__image--2 img {
+          width: auto;
+          height: 100%; }

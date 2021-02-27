@@ -8,7 +8,34 @@ body {
   -webkit-text-size-adjust: 100%; // Prevents iOS orientation font resize bug
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $f-butler;
   font-weight: bold;
+}
+
+h1 {
+  font-size: 3rem;
+  // @include respond-min($bp-tablet-wide-min) {
+  // }
+  @include respond-min($bp-desktop-min) {
+    font-size: 6rem;
+  }
+}
+h2 {
+  font-size: 2.5rem;
+  @include respond-min($bp-desktop-min) {
+    font-size: 5rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+  @include respond-min($bp-desktop-min) {
+    font-size: 4.5rem;
+  }
 }

@@ -41,7 +41,11 @@
     right: 0;
     width: 100%;
     height: 500px;
-    background: linear-gradient(180deg, $clr-grey-lighter 0%, $clr-grey-light 100%);
+    background: linear-gradient(
+      180deg,
+      $clr-grey-lighter 0%,
+      $clr-grey-light 100%
+    );
   }
 
   &__images {
@@ -74,6 +78,95 @@
       padding: 2rem 2rem 0 1rem;
       @include respond-min($bp-tablet-wide-min) {
         padding: 8rem 1rem 0 3rem;
+      }
+    }
+  }
+}
+
+.the-building {
+  position: relative;
+  text-align: center;
+  padding-inline: 2rem;
+  padding-block: 4rem;
+  overflow: hidden;
+
+  &__title {
+    width: 100%;
+    margin-inline: auto;
+    h1 {
+      padding-inline: 3rem;
+      padding-block: 4rem;
+    }
+    @include respond-min($bp-tablet-wide-min) {
+      width: 75%;
+      h1 {
+        padding-inline: 6rem;
+      }
+    }
+  }
+
+  &__copy * {
+    position: relative;
+    width: 100%;
+    padding-inline: 2rem;
+    padding-block-end: 2rem;
+    line-height: 1.5;
+    @include respond-min($bp-tablet-wide-min) {
+      width: 50%;
+      margin-inline: auto;
+    }
+    &:first-child {
+      &:before {
+        position: absolute;
+        top: -65px;
+        left: 0;
+        font-family: $f-butler;
+        font-size: 120px;
+        opacity: 10%;
+        content: 'W';
+      }
+    }
+  }
+
+  &__images {
+    width: 100%;
+    .the-building__image {
+      display: none;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+        @include respond-min($bp-tablet-wide-min) {
+        display: block;
+        }
+      &--1 {
+        height: 500px;
+        left: 0;
+        @include respond-min($bp-tablet-wide-min) {
+          height: 750px;
+        }
+        @include respond-min($bp-desktop-min) {
+          height: 1000px;
+        }
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+      &--2 {
+        height: 350px;
+        right: -10px;
+        @include respond-min($bp-tablet-wide-min) {
+          height: 550px;
+          right: -30px;
+        }
+        @include respond-min($bp-desktop-min) {
+          height: 750px;
+          right: -45px;
+        }
+        img {
+          width: auto;
+          height: 100%;
+        }
       }
     }
   }

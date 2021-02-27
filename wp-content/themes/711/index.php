@@ -59,7 +59,27 @@
         </section>
 
         <section class="the-building">
+          <article class="the-building__title">
+            <h1>An attraction that stands the test of time</h1>
+          </article>
+          <article class="the-building__copy">
+            <p>
+              Within an increasingly complex market, Fifth Avenue remains a magnetic attraction. New York born and bred department stores established 100 years ago such as Bergdorf Goodman and Saks Fifth Avenue are a testament to the location’s enduring success.
+            </p>
 
+            <p>
+              Surrounded by Manhattan’s most valuable office space and prestigious residences, the dense population secures this legacy of success for centuries to come.
+            </p>
+          </article>
+
+          <div class="the-building__images">
+            <figure class="the-building__image the-building__image--1">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/flat-iron.png" alt="">
+            </figure>
+            <figure class="the-building__image the-building__image--2">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clock.png" alt="">
+            </figure>
+          </div>
 
         </section>
 
