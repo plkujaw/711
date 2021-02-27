@@ -86,7 +86,28 @@
 
         <section class="location">
 
+          <div class="location__copy">
 
+            <div class="location__copy__intro">
+              <h3>The avenue of opportunity with over a century of world-leading retail</h3>
+            </div>
+
+            <div class="location__copy__description">
+              <p>Fifth Avenue, Manhattan. An unrivalled shopping address. Lined with luxury brands, high street heroes and pioneering tech brands, this vibrant, bustling area continues to prosper from visitor spending power, showing no signs of slowing down.</p>
+            </div>
+          </div>
+
+          <div class="location__map">
+            <figure class="location__map__map-image">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/map.png" alt="">
+            </figure>
+            <figure class="location__map__over-image location__map__over-image--1">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/people.png" alt="">
+            </figure>
+            <figure class="location__map__over-image location__map__over-image--2">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tree-1.png" alt="">
+            </figure>
+          </div>
         </section>
       
         <section class="contact">
