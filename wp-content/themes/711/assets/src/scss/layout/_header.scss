@@ -1,7 +1,8 @@
 .header {
   position: fixed;
   width: 100%;
-
+  flex: 0 1 auto;
+padding: 2rem;
   z-index: 5;
   font-family: $f-grotesk;
   font-size: 15px;

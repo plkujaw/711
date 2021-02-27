@@ -1,9 +1,7 @@
 .footer {
   flex: 0 1 auto;
-  position: absolute;
+  position: relative;
   width: 100%;
-  bottom: 0;
-  margin: 0 auto;
   
   &__copy {
     text-align: center;

@@ -23,7 +23,7 @@
           <nav class="header__nav">
             <ul class="header__nav__list">
               <li><a href="">LOCATION</a></li>
-              <li><a href="">THE BUILDNG</a></li>
+              <li><a href="">THE BUILDING</a></li>
               <li><a href="">CONTACT</a></li>
               <!-- <li class="nav__back-to-top"><a href="">BACK TO THE TOP</a></li> -->
             </ul>
@@ -35,13 +35,27 @@
         <div class="hero__title">
           <p>RISE ABOVE THE REST</p>
         </div>
+        <div class="hero__smoke hero__smoke--1">
+          
+        </div>
+        <div class="hero__smoke hero__smoke--2">
+
+        </div>
       </section>
 
       <div class="content">
 
+        <div class="intro__gradient">
+        </div>
         <section class="intro">
-
-
+          <div class="intro__images">
+            <div class="intro__image intro__image--1">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro-1.jpg" alt="">
+            </div>
+            <div class="intro__image intro__image--2">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/intro-2.jpg" alt="">
+            </div>
+          </div>
         </section>
 
         <section class="the-building">
