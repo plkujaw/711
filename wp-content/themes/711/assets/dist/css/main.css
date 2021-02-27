@@ -578,7 +578,7 @@ h3 {
     display: none;
     position: relative;
     bottom: 1px;
-    margin-left: 1rem;
+    margin-left: 2rem;
     font-weight: bold; }
     .header__nav .nav__back-to-top:after {
       display: inline-block;
