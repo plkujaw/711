@@ -1,11 +1,33 @@
 .header {
-  position: fixed;
+  position: absolute;
   width: 100%;
   flex: 0 1 auto;
-padding: 2rem;
+  padding: 2rem;
   z-index: 5;
   font-family: $f-grotesk;
   font-size: 15px;
+  transition: ease 0.2s;
+
+  &--sticky {
+    position: fixed;
+    background: $clr-white;
+    padding-block: 0;
+    transition: all ease 0.2s;
+
+    .header__logo__logomark {
+      opacity: 0;
+    }
+    .header__logo__logotype {
+      opacity: 1;
+    }
+    .header__nav {
+      .header__nav__list {
+        .nav__back-to-top {
+          display: block;
+        }
+      }
+    }
+  }
 }
 
 .header__row {
@@ -22,6 +44,7 @@ padding: 2rem;
 
   &__logomark {
     opacity: 1;
+    transition: ease 0.2s;
   }
 
   &__logotype {
@@ -40,16 +63,29 @@ padding: 2rem;
   letter-spacing: 0.8px;
   &__list {
     display: flex;
-    flex-wrap: wrap;
     justify-content: flex-end;
+    flex-wrap: wrap;
     li {
-      margin-right: 2rem;
+      margin-right: 1rem;
+      @include respond-min($bp-tablet-wide-min) {
+        margin-right: 2rem;
+      }
       a {
         font-weight: bold;
       }
       &:last-of-type {
         margin-right: 0;
       }
+    }
+  }
+  .nav__back-to-top {
+    display: none;
+    &:after {
+      display: inline-block;
+      position: relative;
+      margin-left: 0.2rem;
+      content: url('./../../img/icon-up.svg');
+
     }
   }
 }

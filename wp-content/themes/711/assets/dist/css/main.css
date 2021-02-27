@@ -25,7 +25,8 @@
 
 html {
   min-height: 100%;
-  min-width: 320px; }
+  min-width: 320px;
+  scroll-behavior: smooth; }
 
 html,
 body {
@@ -513,13 +514,25 @@ h3 {
     font-size: 14px; }
 
 .header {
-  position: fixed;
+  position: absolute;
   width: 100%;
   flex: 0 1 auto;
   padding: 2rem;
   z-index: 5;
   font-family: "aktiv-grotesk-extended", sans-serif;
-  font-size: 15px; }
+  font-size: 15px;
+  transition: ease 0.2s; }
+  .header--sticky {
+    position: fixed;
+    background: #fff;
+    padding-block: 0;
+    transition: all ease 0.2s; }
+    .header--sticky .header__logo__logomark {
+      opacity: 0; }
+    .header--sticky .header__logo__logotype {
+      opacity: 1; }
+    .header--sticky .header__nav .header__nav__list .nav__back-to-top {
+      display: block; }
 
 .header__row {
   position: relative;
@@ -532,7 +545,8 @@ h3 {
   flex-direction: column;
   justify-content: center; }
   .header__logo__logomark {
-    opacity: 1; }
+    opacity: 1;
+    transition: ease 0.2s; }
   .header__logo__logotype {
     position: absolute;
     font-family: "Butler Stencil", serif;
@@ -547,14 +561,24 @@ h3 {
   letter-spacing: 0.8px; }
   .header__nav__list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end; }
+    justify-content: flex-end;
+    flex-wrap: wrap; }
     .header__nav__list li {
-      margin-right: 2rem; }
+      margin-right: 1rem; }
+      @media screen and (min-width: 48.0625em) {
+        .header__nav__list li {
+          margin-right: 2rem; } }
       .header__nav__list li a {
         font-weight: bold; }
       .header__nav__list li:last-of-type {
         margin-right: 0; }
+  .header__nav .nav__back-to-top {
+    display: none; }
+    .header__nav .nav__back-to-top:after {
+      display: inline-block;
+      position: relative;
+      margin-left: 0.2rem;
+      content: url("./../../img/icon-up.svg"); }
 
 .content {
   flex: 1 1 auto;
@@ -573,9 +597,19 @@ h3 {
     color: #0f0f0f;
     font-family: "aktiv-grotesk-extended", sans-serif;
     font-weight: bold;
+    font-size: 2rem;
     text-align: center;
     letter-spacing: 5px;
     letter-spacing: 15px; }
+  .hero__smoke {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -3px; }
+    .hero__smoke img {
+      padding-block-start: 4rem;
+      width: 100%;
+      height: auto; }
 
 .intro {
   position: relative;
@@ -726,7 +760,7 @@ h3 {
   .location__map {
     position: relative;
     width: 100%;
-    padding: 2rem; }
+    padding-block: 2rem; }
     @media screen and (min-width: 64.0625em) {
       .location__map {
         padding: 5rem; } }
@@ -762,7 +796,8 @@ h3 {
   padding-inline: 2rem; }
   .contact__title {
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    padding-block-end: 2rem; }
     @media screen and (min-width: 48.0625em) {
       .contact__title {
         width: 70%;
