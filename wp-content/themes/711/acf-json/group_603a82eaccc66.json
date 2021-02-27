@@ -321,7 +321,7 @@
                             "key": "field_603a8a3ca35b9",
                             "label": "Email",
                             "name": "email",
-                            "type": "link",
+                            "type": "email",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -330,7 +330,10 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array"
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
                         },
                         {
                             "key": "field_603a8a50a35ba",
@@ -373,5 +376,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1614458469
+    "modified": 1614464545
 }

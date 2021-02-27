@@ -108,16 +108,9 @@
                       <ul>
                         <li><?php the_sub_field('name'); ?></li>
                         <li>
-                          <?php  
-                          $link = get_sub_field('email');
-                          if($link) :
-                            $link_url = $link['url'];
-                            $link_title = $link['title'];
-                          ?> 
-                            <a href="mailto: <?php echo esc_url($link_url); ?>" class="mail">
-                              <?php echo esc_html($link_title); ?>
+                            <a href="mailto: <?php the_sub_field('email'); ?>" class="mail">
+                              <?php the_sub_field('email'); ?>
                             </a>
-                          <?php endif; ?>
                         </li>
                         <li>
                           <a href="tel: <?php the_sub_field('telephone'); ?>"><?php the_sub_field('telephone'); ?>
