@@ -2,11 +2,25 @@
   FONTS
 */
 
-// Default font stacks
-$f-arial: Arial, sans-serif;
-$f-helvetica: 'Helvetica Neue', Helvetica, $f-arial;
+@font-face {
+    font-family: 'Butler Stencil';
+    src: url('../../fonts/ButlerStencil.woff2') format('woff2'),
+        url('../../fonts/ButlerStencil.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../fonts/Poppins-Regular.woff2') format('woff2'),
+        url('../../fonts/Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
-// @import url("https://p.typekit.net/p.css?s=1&k=kmv6ujx&ht=tk&f=15528.15530.17252.45692.45693.45694&a=267839&app=typekit&e=css");
+// custom fonts
 
-$f-europa: 'europa', sans-serif;
-$f-new-spirit: 'new-spirit', serif;
+$f-butler: 'Butler Stencil', serif;
+$f-poppins: 'Poppins', sans-serif;
+$f-grotesk: 'aktiv-grotesk-extended', sans-serif;

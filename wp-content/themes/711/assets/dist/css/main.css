@@ -6,6 +6,20 @@
 /*
   FONTS
 */
+@font-face {
+  font-family: 'Butler Stencil';
+  src: url("../../fonts/ButlerStencil.woff2") format("woff2"), url("../../fonts/ButlerStencil.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Poppins';
+  src: url("../../fonts/Poppins-Regular.woff2") format("woff2"), url("../../fonts/Poppins-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
 * {
   box-sizing: border-box; }
 
@@ -18,21 +32,16 @@ body {
   position: relative;
   height: 100%; }
 
+body {
+  background: #F2F2F2; }
+
 .site {
   display: flex;
   flex-direction: column;
-  height: 100%; }
-
-.container {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: auto;
-  margin-right: auto;
+  height: 100%;
   width: 100%;
-  max-width: 90em; }
-
-img, svg {
-  display: block; }
+  margin-left: auto;
+  margin-right: auto; }
 
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -333,19 +342,87 @@ template {
 [hidden] {
   display: none; }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -354,21 +431,34 @@ time, mark, audio, video {
   vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block; }
 
 body {
   line-height: 1; }
 
-ol, ul {
+ol,
+ul {
   list-style: none; }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none; }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: '';
   content: none; }
 
@@ -376,7 +466,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+a {
+  text-decoration: none;
+  color: #353231; }
+
 body {
+  font-family: "Poppins", sans-serif;
+  color: #353231;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -384,13 +480,73 @@ body {
   -webkit-text-size-adjust: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: "Butler Stencil", serif;
   font-weight: bold; }
 
 .footer {
-  flex: 0 1 auto; }
+  flex: 0 1 auto;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin: 0 auto; }
+  .footer__copy {
+    text-align: center;
+    font-size: 14px; }
 
 .header {
-  flex: 0 1 auto; }
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  font-family: "aktiv-grotesk-extended", sans-serif;
+  font-size: 15px; }
 
-.content {
-  flex: 1 1 auto; }
+.header__row {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center; }
+
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .header__logo__logomark {
+    opacity: 1; }
+  .header__logo__logotype {
+    position: absolute;
+    font-family: "Butler Stencil", serif;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #000;
+    opacity: 0; }
+
+.header__nav {
+  margin-left: auto;
+  letter-spacing: 0.8px; }
+  .header__nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; }
+    .header__nav__list li {
+      margin-right: 2rem; }
+      .header__nav__list li a {
+        font-weight: bold; }
+      .header__nav__list li:last-of-type {
+        margin-right: 0; }
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background: #D8D8D8;
+  height: 100vh;
+  width: 100%; }
+  .hero__title {
+    align-self: flex-end;
+    color: #0f0f0f;
+    font-family: "aktiv-grotesk-extended", sans-serif;
+    font-weight: bold;
+    letter-spacing: 5px;
+    padding-bottom: 4rem;
+    text-align: center; }

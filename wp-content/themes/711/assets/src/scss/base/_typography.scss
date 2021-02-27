@@ -1,4 +1,6 @@
 body {
+  font-family: $f-poppins;
+  color: $clr-grey-dark;
   text-rendering: optimizeLegibility; // aestheticallyloyal.com/public/optimize-legibility/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -7,5 +9,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: $f-butler;
   font-weight: bold;
 }

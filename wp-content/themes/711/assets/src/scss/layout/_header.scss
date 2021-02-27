@@ -1,3 +1,54 @@
 .header {
-  flex: 0 1 auto;
+  position: fixed;
+  width: 100%;
+
+  z-index: 5;
+  font-family: $f-grotesk;
+  font-size: 15px;
+}
+
+.header__row {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__logomark {
+    opacity: 1;
+  }
+
+  &__logotype {
+    position: absolute;
+    font-family: $f-butler;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: $clr-black-primary;
+    opacity: 0;
+  }
+}
+
+.header__nav {
+  margin-left: auto;
+  letter-spacing: 0.8px;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    li {
+      margin-right: 2rem;
+      a {
+        font-weight: bold;
+      }
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
 }

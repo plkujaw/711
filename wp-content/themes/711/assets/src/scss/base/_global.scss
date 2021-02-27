@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  
 }
 
 html {
@@ -13,21 +14,17 @@ body {
   height: 100%;
 }
 
+body {
+  background: $clr-grey-light;
+
+}
 .site {
   display: flex;
   flex-direction: column;
   height: 100%;
-}
-
-.container {
-  padding-left: 0;
-  padding-right: 0;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-  max-width: $site-width;
-}
 
-img, svg {
-    display: block;
+  // max-width: $site-width;
 }
