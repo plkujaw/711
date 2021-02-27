@@ -757,3 +757,37 @@ h3 {
           .location__map__over-image--2 {
             width: 250px;
             right: -80px; } }
+
+.contact {
+  padding-inline: 2rem; }
+  .contact__title {
+    width: 100%;
+    text-align: center; }
+    @media screen and (min-width: 48.0625em) {
+      .contact__title {
+        width: 70%;
+        margin-inline: auto; } }
+    @media screen and (min-width: 64.0625em) {
+      .contact__title {
+        width: 60%; } }
+  .contact__office__location {
+    padding-block: 2rem;
+    text-align: center; }
+    .contact__office__location p {
+      font-family: "aktiv-grotesk-extended", sans-serif;
+      font-weight: bold;
+      letter-spacing: 2px; }
+    .contact__office__location__details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; }
+  .contact__office__details {
+    padding-block: 1rem;
+    padding-inline: 1rem; }
+    @media screen and (min-width: 48.0625em) {
+      .contact__office__details {
+        padding: 2rem; } }
+    .contact__office__details ul {
+      line-height: 1.5; }
+      .contact__office__details ul li .mail {
+        text-decoration: underline; }

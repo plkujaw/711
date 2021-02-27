@@ -175,7 +175,6 @@
 }
 
 .location {
-
   padding: 2rem;
   @include respond-min($bp-desktop-min) {
     padding-inline: 5rem;
@@ -208,7 +207,7 @@
   }
 
   &__map {
-  position: relative;
+    position: relative;
     width: 100%;
     padding: 2rem;
     @include respond-min($bp-desktop-min) {
@@ -236,7 +235,6 @@
         left: 0;
         @include respond-min($bp-desktop-min) {
           width: 220px;
-
         }
       }
       &--2 {
@@ -245,9 +243,51 @@
         top: -10%;
         @include respond-min($bp-desktop-min) {
           width: 250px;
-        right: -80px;
+          right: -80px;
+        }
+      }
+    }
+  }
+}
 
-        // top: 10%;
+.contact {
+  padding-inline: 2rem;
+  &__title {
+    width: 100%;
+    text-align: center;
+    @include respond-min($bp-tablet-wide-min) {
+      width: 70%;
+      margin-inline: auto;
+    }
+    @include respond-min($bp-desktop-min) {
+      width: 60%;
+    }
+  }
+  &__office__location {
+    padding-block: 2rem;
+    text-align: center;
+    p {
+      font-family: $f-grotesk;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    &__details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  &__office__details {
+    padding-block: 1rem;
+    padding-inline: 1rem;
+    @include respond-min($bp-tablet-wide-min) {
+    padding: 2rem;
+    }
+    ul {
+      line-height: 1.5;
+      li {
+        .mail {
+          text-decoration: underline;
         }
       }
     }
