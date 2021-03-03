@@ -15,5 +15,8 @@
       ) )?>
         <span class="nav__back-to-top"><a href="#">BACK TO THE TOP</a></span>
     </nav>
+    <div class="header__menu">
+      <div class="header__menu__button"></div>
+    </div>
   </div>
 </header>

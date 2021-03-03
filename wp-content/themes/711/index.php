@@ -12,24 +12,29 @@
     <div id="page" class="site">
       
     <?php get_template_part('includes/header') ?>
+    <?php get_template_part('includes/mobile-menu') ?>
 
       <section class="hero">
         <div class="hero__title">
           <p><?php the_field('hero_title') ?></p>
         </div>
-        <figure class="hero__smoke hero__smoke--1">
+        <figure class="hero__smoke hero__smoke--1 rellax" data-rellax-speed="4">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/smoke-1-l.png" alt="">
         </figure>
-      </section>
 
-      <div class="content">
+        <figure class="hero__smoke hero__smoke--2 rellax">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/smoke-1-r.png" alt="">
+        </figure>
+      </section>
+    
+      <main class="content">
 
         <div class="intro__gradient">
         </div>
-        <section class="intro">
+        <section class="intro scroll-fade">
 
           <?php if(have_rows('intro_image')): ?>
-                        <div class="intro__images">
+            <div class="intro__images">
               <?php while(have_rows('intro_image')): the_row(); ?>
 
                 <?php $intro_image = get_sub_field('image'); ?>
@@ -44,8 +49,8 @@
 
         </section>
 
-        <section class="the-building" id="building">
-          <article class="the-building__title">
+        <section class="the-building scroll-fade">
+          <article class="the-building__title" id="building">
             <h1><?php the_field('building_section_title') ?></h1>
           </article>
           <article class="the-building__copy">
@@ -53,20 +58,32 @@
           </article>
 
           <div class="the-building__images">
-            <figure class="the-building__image the-building__image--1">
+            <figure class="the-building__image the-building__image--1 img-left rellax" data-rellax-speed="-1">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/flat-iron.png" alt="Flat Iron Building">
             </figure>
-            <figure class="the-building__image the-building__image--2">
+
+            <figure class="building-smoke-1 rellax">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/smoke-building.png" alt="Flat Iron Building">
+            </figure>
+
+            <figure class="the-building__image the-building__image--2 img-right rellax" data-rellax-speed="-1"">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clock.png" alt="Fifth Avenue Clock">
             </figure>
-          </div>
 
+            <figure class="clock-smoke-1 rellax">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/smoke-building.png" alt="Flat Iron Building">
+            </figure>
+
+          </div>
+            <!-- <figure class="img-prlx rellax building-smoke-1">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/smoke-1-l.png" />
+            </figure> -->
         </section>
 
 
-        <section class="location" id="location">
+        <section class="location scroll-fade" >
 
-          <div class="location__copy">
+          <div class="location__copy" id="location">
 
             <div class="location__copy__intro">
               <h3><?php the_field('location_intro') ?></h3>
@@ -90,15 +107,15 @@
           </div>
         </section>
       
-        <section class="contact" id="contact">
-          <article class="contact__title">
+        <section class="contact scroll-fade" >
+          <article class="contact__title" id="contact">
             <h1><?php the_field('contact_section_title') ?></h1>
           </article>
 
           <?php if(have_rows('contact_office')): ?>
             <?php while(have_rows('contact_office')): the_row(); ?>
           
-              <article class="contact__office__location">
+              <article class="contact__office__location" >
 
                 <p><?php the_sub_field('office_location'); ?></p>
                 <div class="contact__office__location__details">
@@ -124,7 +141,31 @@
               </article>
             <?php endwhile; ?>
           <?php endif; ?>
-        </section>
-      </div>
 
-    <?php get_template_part('includes/footer') ?>
+          
+          
+          
+          <figure class="img-prlx img-left contact-img-left-bottom rellax">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/buildings-1.png" />
+          </figure>
+
+          <figure class="img-prlx img-left contact-img-left-top rellax" data-rellax-speed="4">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tree-3.png"/>
+          </figure>
+
+          <figure class="img-prlx img-right contact-img-right-bottom rellax">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/buildings-2.png">
+          </figure>
+
+          <figure class="img-prlx img-right contact-img-right-top rellax" data-rellax-speed="4">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tree-2.png">
+          </figure>
+    
+          
+        </section>
+        
+        <?php get_template_part('includes/footer') ?>
+      </main>
+    </div>
+  </body>
+</html>

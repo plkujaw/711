@@ -2,12 +2,14 @@
   position: absolute;
   width: 100%;
   flex: 0 1 auto;
-  padding: 2rem;
-  z-index: 5;
+  padding: 3rem;
+  z-index: 10;
   font-family: $f-grotesk;
   font-size: 15px;
   transition: ease 0.2s;
-
+  @include respond-min($bp-desktop-min) {
+    padding: 5rem;
+  }
   &--sticky {
     position: fixed;
     background: $clr-white;
@@ -16,14 +18,33 @@
 
     .header__logo__logomark {
       opacity: 0;
+      display: none;
     }
+
     .header__logo__logotype {
       opacity: 1;
     }
     .header__nav {
-        .nav__back-to-top {
-          display: block;
+      position: relative;
+      top: 5px;
+      .nav__back-to-top {
+        display: block;
+      }
+    }
+    .header__nav__list {
+      li {
+        margin-right: 1rem;
+        @include respond-min($bp-desktop-min) {
+          margin-right: 2rem;
         }
+      }
+    }
+    .header__row {
+      padding-block: 2rem;
+    }
+    .header__menu {
+      position: relative;
+      top: 8px;
     }
   }
 }
@@ -33,6 +54,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header__logo {
@@ -59,15 +81,20 @@
 .header__nav {
   margin-left: auto;
   letter-spacing: 0.8px;
-  display: flex;
+  display: none;
+
+  @include respond-min($bp-desktop-min) {
+    display: flex;
+  }
+
   &__list {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
     li {
       margin-right: 1rem;
-      @include respond-min($bp-tablet-wide-min) {
-        margin-right: 2rem;
+      @include respond-min($bp-desktop-min) {
+        margin-right: 5rem;
       }
       a {
         font-weight: bold;
@@ -89,5 +116,40 @@
       margin-left: 0.2rem;
       content: url('./../../img/icon-up.svg');
     }
+  }
+}
+
+.header__menu {
+  position: relative;
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.header__menu__button {
+  display: block;
+  position: relative;
+  width: 20px;
+  height: 2px;
+  background: $clr-black-primary;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    position: absolute;
+    background: $clr-black-primary;
+    width: 20px;
+    height: 2px;
+    content: '';
+  }
+  &:before {
+    top: -5px;
+  }
+  &:after {
+    bottom: -5px;
+  }
+
+  @include respond-min($bp-desktop-min) {
+    display: none;
   }
 }

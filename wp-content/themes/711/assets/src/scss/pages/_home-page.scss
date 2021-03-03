@@ -1,6 +1,7 @@
 .content {
   flex: 1 1 auto;
   position: relative;
+  overflow: hidden;
 }
 
 .hero {
@@ -10,6 +11,7 @@
   background: $clr-grey-medium;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
 
   &__title {
     align-self: flex-end;
@@ -21,17 +23,26 @@
     text-align: center;
     letter-spacing: 5px;
     letter-spacing: 15px;
+    z-index: 1;
   }
   &__smoke {
     position: absolute;
-    width: 100%;
-    left: 0;
-    bottom:-3px;
+    // width: 100%;
 
     img {
       padding-block-start: 4rem;
-      width: 100%;
+      // width: 100%;
       height: auto;
+    }
+
+    &--1 {
+      left: 0;
+      bottom: -250px;
+    }
+
+    &--2 {
+      right: 0;
+      bottom: -10px;
     }
   }
 }
@@ -45,6 +56,8 @@
   @include respond-min($bp-tablet-wide-min) {
     width: 80%;
     margin-inline: auto;
+    padding-block-start: 2rem;
+    padding-block-end: 2rem;
   }
 
   &__gradient {
@@ -54,11 +67,7 @@
     right: 0;
     width: 100%;
     height: 500px;
-    background: linear-gradient(
-      180deg,
-      $clr-grey-lighter 0%,
-      $clr-grey-light 100%
-    );
+    background: linear-gradient(180deg, $clr-grey-light 0%, $clr-white 100%);
   }
 
   &__images {
@@ -68,7 +77,6 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    padding-block: 2rem;
   }
 
   &__image {
@@ -99,13 +107,25 @@
 .the-building {
   position: relative;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-inline: 2rem;
-  padding-block: 4rem;
+  padding-block: 2rem;
   overflow: hidden;
+  min-height: 800px;
 
+  @include respond-min($bp-tablet-wide-min) {
+    min-height: 1200px;
+    margin-block-start: 10rem;
+    padding-block: 4rem;
+  }
   &__title {
     width: 100%;
     margin-inline: auto;
+    position: relative;
+    z-index: 5;
+
     h1 {
       padding-inline: 3rem;
       padding-block: 4rem;
@@ -125,6 +145,8 @@
     padding-inline: 2rem;
     padding-block-end: 2rem;
     line-height: 1.5;
+    z-index: 5;
+
     @include respond-min($bp-tablet-wide-min) {
       width: 50%;
       margin-inline: auto;
@@ -148,34 +170,35 @@
       display: none;
       position: absolute;
       top: 0;
-      z-index: -1;
+      // z-index: -1;
       @include respond-min($bp-tablet-wide-min) {
         display: block;
       }
       &--1 {
-        height: 500px;
         left: 0;
-        @include respond-min($bp-tablet-wide-min) {
-          height: 750px;
-        }
-        @include respond-min($bp-desktop-min) {
-          height: 1000px;
-        }
+        // height: 500px;
+        // @include respond-min($bp-tablet-wide-min) {
+        //   height: 750px;
+        // }
+        // @include respond-min($bp-desktop-min) {
+        //   height: 1000px;
+        // }
         img {
           width: auto;
           height: 100%;
         }
       }
+
       &--2 {
-        height: 350px;
-        top: 50px;
+        top: 150px;
         right: -10px;
+        // height: 350px;
         @include respond-min($bp-tablet-wide-min) {
-          height: 550px;
+          // height: 550px;
           right: -30px;
         }
         @include respond-min($bp-desktop-min) {
-          height: 750px;
+          // height: 750px;
           right: -45px;
         }
         img {
@@ -183,6 +206,17 @@
           height: 100%;
         }
       }
+    }
+
+    .building-smoke-1 {
+      position: absolute;
+      bottom: 200px;
+      left: -50px;
+    }
+    .clock-smoke-1 {
+      position: absolute;
+      right: -640px;
+      top: 200px;
     }
   }
 }
@@ -200,6 +234,7 @@
 
     @include respond-min($bp-desktop-min) {
       padding-inline: 5rem;
+      padding-block-start: 5rem;
     }
     &__intro {
       flex: 0 1 auto;
@@ -265,21 +300,32 @@
 
 .contact {
   padding-inline: 2rem;
+  padding-block-start: 10rem;
+  min-height: 1200px;
+  position: relative;
   &__title {
-    width: 100%;
+    width: 80%;
+    margin-inline: auto;
+
     text-align: center;
+    padding-block-start: 4rem;
     padding-block-end: 2rem;
+    z-index: 10;
     @include respond-min($bp-tablet-wide-min) {
-      width: 70%;
+      width: 50%;
       margin-inline: auto;
+      padding-block-start: 10rem;
     }
-    @include respond-min($bp-desktop-min) {
-      width: 60%;
-    }
+    // @include respond-min($bp-desktop-min) {
+    //   width: 50%;
+    // }
   }
   &__office__location {
     padding-block: 2rem;
     text-align: center;
+    width: 75%;
+    margin-inline: auto;
+
     p {
       font-family: $f-grotesk;
       font-weight: bold;
@@ -306,4 +352,36 @@
       }
     }
   }
+}
+
+.img-prlx {
+  position: absolute;
+}
+
+.img-left {
+  left: 0;
+}
+
+.img-right {
+  right: 0;
+}
+
+.contact-img-left-bottom {
+  bottom: 300px;
+  z-index: -1;
+}
+
+.contact-img-left-top {
+  bottom: -1280px;
+  z-index: -1;
+}
+
+.contact-img-right-bottom {
+  bottom: 350px;
+  z-index: -1;
+}
+
+.contact-img-right-top {
+  bottom: -1200px;
+  z-index: -1;
 }
