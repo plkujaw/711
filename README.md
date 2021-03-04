@@ -11,7 +11,7 @@ DB available upon request. :)
 
 Left to do:
 
-* Mobile nav
-* Parallax animations
-* Text/content lazy loading
-* General code tidy up
+* ~~Mobile nav~~
+* ~~Parallax animations~~
+* ~~Text/content lazy loading~~
+* ~~General code tidy up~~
