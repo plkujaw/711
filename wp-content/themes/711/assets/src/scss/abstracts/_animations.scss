@@ -1,0 +1,12 @@
+.scroll-fade,
+.load-fade {
+  @include respond-min($bp-tablet-wide-min) {
+    opacity: 0;
+    position: relative;
+    transition: 0.5s opacity ease, 0.5s top;
+    &-in {
+      opacity: 1;
+      // top: 0;
+    }
+  }
+}

@@ -49,11 +49,11 @@
 
         </section>
 
-        <section class="the-building scroll-fade">
-          <article class="the-building__title" id="building">
+        <section class="the-building">
+          <article class="the-building__title scroll-fade" id="building">
             <h1><?php the_field('building_section_title') ?></h1>
           </article>
-          <article class="the-building__copy">
+          <article class="the-building__copy scroll-fade">
             <p><?php the_field('building_section_copy') ?></p>
           </article>
 
@@ -66,7 +66,7 @@
               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/smoke-building.png" alt="Flat Iron Building">
             </figure>
 
-            <figure class="the-building__image the-building__image--2 img-right rellax" data-rellax-speed="-1"">
+            <figure class="the-building__image the-building__image--2 rellax" data-rellax-speed="-1"">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/clock.png" alt="Fifth Avenue Clock">
             </figure>
 
@@ -81,9 +81,9 @@
         </section>
 
 
-        <section class="location scroll-fade" >
+        <section class="location" >
 
-          <div class="location__copy" id="location">
+          <div class="location__copy scroll-fade" id="location">
 
             <div class="location__copy__intro">
               <h3><?php the_field('location_intro') ?></h3>
@@ -107,15 +107,15 @@
           </div>
         </section>
       
-        <section class="contact scroll-fade" >
-          <article class="contact__title" id="contact">
+        <section class="contact" >
+          <article class="contact__title scroll-fade" id="contact">
             <h1><?php the_field('contact_section_title') ?></h1>
           </article>
 
           <?php if(have_rows('contact_office')): ?>
             <?php while(have_rows('contact_office')): the_row(); ?>
           
-              <article class="contact__office__location" >
+              <article class="contact__office__location scroll-fade" >
 
                 <p><?php the_sub_field('office_location'); ?></p>
                 <div class="contact__office__location__details">
