@@ -195,14 +195,6 @@
         top: 150px;
         right: 0;
 
-        // @include respond-min($bp-tablet-wide-min) {
-        //   right: -30px;
-        // }
-
-        // @include respond-min($bp-desktop-min) {
-        //   right: -45px;
-
-        // }
         img {
           width: auto;
           height: 100%;
@@ -212,13 +204,13 @@
 
     .building-smoke-1 {
       position: absolute;
-      bottom: 200px;
+      bottom: 220px;
       left: -50px;
     }
     .clock-smoke-1 {
       position: absolute;
       right: -640px;
-      top: 200px;
+      top: 220px;
     }
   }
 }

@@ -821,12 +821,12 @@ h3 {
           height: 100%; }
     .the-building__images .building-smoke-1 {
       position: absolute;
-      bottom: 200px;
+      bottom: 220px;
       left: -50px; }
     .the-building__images .clock-smoke-1 {
       position: absolute;
       right: -640px;
-      top: 200px; }
+      top: 220px; }
 
 .location {
   padding: 2rem; }
