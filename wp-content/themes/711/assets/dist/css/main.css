@@ -529,7 +529,8 @@ h3 {
     position: fixed;
     background: #fff;
     padding-block: 0;
-    transition: all ease 0.2s; }
+    transition: all ease 0.2s;
+    z-index: 15; }
     .header--sticky .header__logo__logomark {
       opacity: 0;
       display: none; }
